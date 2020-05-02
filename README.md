@@ -1,7 +1,11 @@
-TypeScript React "material-ui" Demo
+TypeScript React "material-ui" Expansion Panel Select Text Demo
 ===================================
 
-如何使用TypeScript来写"material-ui"
+Expansion panel的summary默认不能选择文字，因为作者觉得它像button:
+
+https://github.com/mui-org/material-ui/issues/20700
+
+可以通过手动设置style: `style={{userSelect: 'text'}}` 解决
 
 ```
 npm install

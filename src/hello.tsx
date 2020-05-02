@@ -1,33 +1,22 @@
-import React, {useState} from 'react'
-
-import {List, ListItem, ListItemText, ListItemIcon, Collapse} from '@material-ui/core'
-import InboxIcon from '@material-ui/icons/Inbox'
-import {ExpandMore, ExpandLess} from '@material-ui/icons'
+import {ExpansionPanelDetails, ExpansionPanelSummary, Typography} from '@material-ui/core'
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import React from 'react'
 
 export default function MyList() {
-  const [open, setOpen] = useState(false)
 
-  return <div>
-    <List>
-      <ListItem button onClick={() => setOpen(!open)}>
-        <ListItemIcon>
-          <InboxIcon/>
-        </ListItemIcon>
-        <ListItemText primary='Hello'/>
-        {
-          open ? <ExpandLess/> : <ExpandMore/>
-        }
-      </ListItem>
-      <Collapse in={open}>
-        <List>
-          <ListItem>
-            <ListItemText primary='typescript'/>
-          </ListItem>
-          <ListItem>
-            <ListItemText primary='material-ui'/>
-          </ListItem>
-        </List>
-      </Collapse>
-    </List>
-  </div>
+  return <ExpansionPanel>
+    <ExpansionPanelSummary
+      expandIcon={<ExpandMoreIcon/>}
+      style={{userSelect: 'text'}}
+    >
+      <Typography>Expansion Panel 1</Typography>
+    </ExpansionPanelSummary>
+    <ExpansionPanelDetails>
+      <Typography>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+        sit amet blandit leo lobortis eget.
+      </Typography>
+    </ExpansionPanelDetails>
+  </ExpansionPanel>
 }
